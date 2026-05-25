@@ -45,3 +45,7 @@ The notebooks keep their original Colab assumptions, including Drive paths and s
 
 Large model weights are local artifacts and should not be committed. The `checkpoints/` directory is ignored by git, as are `*.pth`, `*.pt`, and `*.ckpt` files. Place checkpoint files manually in `checkpoints/` or in the Drive path expected by a notebook before running checkpoint-dependent evaluation cells.
 
+## Key results
+![Comaprison FID vs Nearest Neighbour](image.png)
+
+Augmentation helped with memorization but at the cost of worsened FID score.
