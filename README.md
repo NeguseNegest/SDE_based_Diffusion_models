@@ -45,20 +45,3 @@ The notebooks keep their original Colab assumptions, including Drive paths and s
 
 Large model weights are local artifacts and should not be committed. The `checkpoints/` directory is ignored by git, as are `*.pth`, `*.pt`, and `*.ckpt` files. Place checkpoint files manually in `checkpoints/` or in the Drive path expected by a notebook before running checkpoint-dependent evaluation cells.
 
-## Key Results
-
-The main notebook summary reports FID against train and test references using generated samples from trained raw checkpoints:
-
-| Dataset | SDE | Model | Augmented | FID train | FID test | Test - train |
-| --- | --- | --- | :---: | ---: | ---: | ---: |
-| CIFAR-10 bird | VP-SDE | U-Net | No | 29.418 | 49.856 | 20.438 |
-| CIFAR-10 bird | VP-SDE | DDPM++ | No | 31.792 | 51.868 | 20.076 |
-| CIFAR-10 bird | VE-SDE | NCSN++ | No | 32.072 | 52.171 | 20.099 |
-| CIFAR-10 bird | VE-SDE | NCSN++ | Yes | 35.381 | 57.869 | 22.488 |
-| CIFAR-10 bird | VP-SDE | U-Net | Yes | 39.020 | 60.589 | 21.569 |
-| CIFAR-10 bird | VP-SDE | DDPM++ | Yes | 40.424 | 61.931 | 21.508 |
-| Oxford Flowers | VP-SDE | DDPM++ | No | 82.152 | 73.686 | -8.467 |
-| Oxford Flowers | VP-SDE | DDPM++ | Yes | 114.031 | 103.368 | -10.663 |
-
-Nearest-neighbor memorization summaries are also reported in `notebooks/evaluation_fid_memorization.ipynb`. The largest reported train/test NN gap among the listed CIFAR-10 bird models is for the non-augmented VP-SDE U-Net run; the notebook keeps the full table and generated outputs.
-
